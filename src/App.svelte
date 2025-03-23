@@ -1,47 +1,57 @@
+<!--
+  App.svelte
+
+  This is the main component of the trivia game.
+  It manages the game state (question index, score, player name, etc.)
+  and renders either the next question or a final score screen.
+-->
+
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+  import { questions } from './questions.js';
+  import Question from './Question.svelte';
+
+  let current = 0;
+  let showScore = false;
+
+  // TODO 🍌 (Step 2): Add a new variable to track score
+  // TODO 🍌 (Step 3): Add a variable for the player's name
+  // TODO 🍌 (Step 5): Add a variable to track time remaining
+  // TODO 🍌 (Step 5): Add logic to start and update a countdown timer
+
+  function handleAnswer(choice) {
+    // TODO 🍌 (Step 2): Track score by comparing selected answer
+    // TODO 🍌 (Step 5): Stop the timer when an answer is given
+
+    current++;
+    if (current >= questions.length) {
+      showScore = true;
+    } else {
+      // TODO 🍌 (Step 5): Restart timer for next question
+    }
+  }
+
+  // TODO 🍌 (Step 4): Create a function to reset the game state for "Play Again"
+  // TODO 🍌 (Step 3): Create a function to start the game once name is entered
 </script>
 
-<main>
-  <div>
-    <a href="https://vite.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+<h1>Trivia!</h1>
 
-  <div class="card">
-    <Counter />
-  </div>
+<!-- TODO 🍌 (Step 3): Show an input field for player name before the game starts -->
+<!-- TODO 🍌 (Step 3): When the user presses Enter, start the game and hide the input -->
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
+{#if showScore}
+  <!-- TODO 🍌 (Step 2): Show final score here -->
+  <!-- TODO 🍌 (Step 3): Personalize message with player name -->
+  <p>You've completed the game!</p>
 
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
+  <!-- TODO 🍌 (Step 4): Add a “Play Again” button here -->
+{:else}
+  <!-- TODO 🍌 (Step 5): Show countdown timer here -->
+  <Question
+    question={questions[current].question}
+    choices={questions[current].choices}
+    onAnswer={handleAnswer}
+  />
+{/if}
 
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
+<!-- TODO 🍌 (Step 6): Add styles/animations to highlight correct/incorrect answers -->
