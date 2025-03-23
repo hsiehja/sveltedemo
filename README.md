@@ -6,7 +6,9 @@ npm install
 npm run dev
 ```
 
-## ✅ Complete the following tasks:
+Go to: http://localhost:5173/
+
+## Complete the following tasks:
 
 ### 1. Add 2 new trivia questions
 **File:** `questions.js`  
