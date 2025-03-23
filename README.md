@@ -6,7 +6,7 @@ npm install
 npm run dev
 ```
 
-## ✅ Complete the following tasks:
+## Complete the following tasks:
 
 ### 1. Add 2 new trivia questions
 **File:** `questions.js`  
