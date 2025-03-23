@@ -6,7 +6,7 @@ npm install
 npm run dev
 ```
 
-http://localhost:5173/
+Go to: http://localhost:5173/
 
 ## Complete the following tasks:
 
