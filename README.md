@@ -1,4 +1,4 @@
-#sveltedemo
+# Svelte Demo
 
 To run:
 ```bash
