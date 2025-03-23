@@ -1,8 +1,10 @@
 #sveltedemo
 
 To run:
+```bash
 npm install
 npm run dev
+```
 
 Complete the following tasks:
 1. Add 2 new trivia questions in `questions.js`
