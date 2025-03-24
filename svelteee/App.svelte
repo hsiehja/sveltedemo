@@ -74,6 +74,7 @@
     <input bind:value={playerName} on:keydown={(e) => e.key === 'Enter' && startGame()} />
   </label>
 {:else if showScore}
+  <!-- 🐵 Added: Displays final score with player name -->
   <p>{playerName}, you scored {score} out of {questions.length}!</p>
 
   <!-- 🐵 Added: Play again button -->
